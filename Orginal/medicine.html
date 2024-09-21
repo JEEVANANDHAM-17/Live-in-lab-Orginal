@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>medicine Asclemedco</title>
+    <title>Medicine Asclemedco</title>
     <link rel="stylesheet" href="medicine.css"> 
 </head>
 <body>
@@ -15,11 +15,283 @@
     </a>
     <div class="search">
         <h1>Drugs and Medications A - Z</h1>
-        <div class="input_div">
-            <input placeholder="Enter drug name to search">
-            <h3 style="padding-left: 20px;">Search medication by letter ⬇️</h3>
-        </div>
-        
     </div>
+
+    <div id="alphabet">
+        <div class="alphabet-box" onclick="showDrugs('A')">A</div>
+        <div class="alphabet-box" onclick="showDrugs('B')">B</div>
+        <div class="alphabet-box" onclick="showDrugs('C')">C</div>
+        <div class="alphabet-box" onclick="showDrugs('D')">D</div>
+        <div class="alphabet-box" onclick="showDrugs('E')">E</div>
+        <div class="alphabet-box" onclick="showDrugs('F')">F</div>
+        <div class="alphabet-box" onclick="showDrugs('G')">G</div>
+        <div class="alphabet-box" onclick="showDrugs('H')">H</div>
+        <div class="alphabet-box" onclick="showDrugs('I')">I</div>
+        <div class="alphabet-box" onclick="showDrugs('J')">J</div>
+        <div class="alphabet-box" onclick="showDrugs('K')">K</div>
+        <div class="alphabet-box" onclick="showDrugs('L')">L</div>
+        <div class="alphabet-box" onclick="showDrugs('M')">M</div>
+        <div class="alphabet-box" onclick="showDrugs('N')">N</div>
+        <div class="alphabet-box" onclick="showDrugs('O')">O</div>
+        <div class="alphabet-box" onclick="showDrugs('P')">P</div>
+        <div class="alphabet-box" onclick="showDrugs('Q')">Q</div>
+        <div class="alphabet-box" onclick="showDrugs('R')">R</div>
+        <div class="alphabet-box" onclick="showDrugs('S')">S</div>
+        <div class="alphabet-box" onclick="showDrugs('T')">T</div>
+        <div class="alphabet-box" onclick="showDrugs('U')">U</div>
+        <div class="alphabet-box" onclick="showDrugs('V')">V</div>
+        <div class="alphabet-box" onclick="showDrugs('W')">W</div>
+        <div class="alphabet-box" onclick="showDrugs('X')">X</div>
+        <div class="alphabet-box" onclick="showDrugs('Y')">Y</div>
+        <div class="alphabet-box" onclick="showDrugs('Z')">Z</div>
+    </div>
+
+    <!-- Display area for the drug list -->
+    <div id="drug-list"></div>
+
+    <script>
+        // Define drug lists for each letter
+        const drugData = {
+                    'A': [
+                        "Abilify",
+                        "Acetaminophen",
+                        "Actos",
+                        "Adderall",
+                        "Advair Diskus",
+                        "Aleve",
+                        "Alprazolam",
+                        "Amoxicillin",
+                        "Aspirin",
+                        "Atorvastatin"
+                    ],
+                    'B': [
+                        "Benadryl",
+                        "Betamethasone",
+                        "Bactrim",
+                        "Biaxin",
+                        "Bystolic",
+                        "Boniva",
+                        "Belviq",
+                        "Benzonatate",
+                        "Bisoprolol",
+                        "Brilinta"
+                    ],
+                    'C': [
+                        "Cymbalta",
+                        "Ciprofloxacin",
+                        "Crestor",
+                        "Celexa",
+                        "Coumadin",
+                        "Clonazepam",
+                        "Cialis",
+                        "Citalopram",
+                        "Claritin",
+                        "Clozapine"
+                    ],
+                    'D': [
+                        "Doxycycline",
+                        "Diazepam",
+                        "Dexilant",
+                        "Diovan",
+                        "Depakote",
+                        "Dulcolax",
+                        "Dilaudid",
+                        "Duloxetine",
+                        "Dextroamphetamine",
+                        "Diclofenac"
+                    ],
+                    'E': [
+                        "Eliquis",
+                        "Erythromycin",
+                        "Effexor",
+                        "Estradiol",
+                        "Ezetimibe",
+                        "Excedrin",
+                        "Epipen",
+                        "Elavil",
+                        "Enbrel",
+                        "Etoposide"
+                    ],
+                    'F': [
+                        "Flonase",
+                        "Famotidine",
+                        "Furosemide",
+                        "Flagyl",
+                        "Flexeril",
+                        "Fentanyl",
+                        "Flomax",
+                        "Fluoxetine",
+                        "Farxiga",
+                        "Fioricet"
+                    ],
+                    'G': [
+                        "Gabapentin",
+                        "Glipizide",
+                        "Glyburide",
+                        "Gleevec",
+                        "Griseofulvin",
+                        "Gemfibrozil",
+                        "Guaifenesin",
+                        "Geodon",
+                        "Gentamicin",
+                        "Glucophage"
+                    ],
+                    'H': [
+                        "Hydrochlorothiazide",
+                        "Humira",
+                        "Heparin",
+                        "Hydrocodone",
+                        "Hydroxychloroquine",
+                        "Haldol",
+                        "Hyzar",
+                        "Humalog",
+                        "Halcion",
+                        "Hydrea"
+                    ],
+                    'I': [
+                        "Ibuprofen",
+                        "Imitrex",
+                        "Imodium",
+                        "Inderal",
+                        "Ivermectin",
+                        "Isosorbide",
+                        "Invokana",
+                        "Invega",
+                        "Intron",
+                        "Iodoquinol"
+                    ],
+                    'J': [
+                        "Januvia",
+                        "Jentadueto",
+                        "Jardiance",
+                        "Jakafi",
+                        "Jetrea",
+                        "Jalyn",
+                        "Jemperli",
+                        "Juxtapid",
+                        "Jivi",
+                        "Jeuveau"
+                    ],
+                    'K': [
+                        "Ketorolac",
+                        "Klor-Con",
+                        "Klonopin",
+                        "Kybella"
+                    ],
+                    'L': [
+                        "Labetalol",
+                        "Lamotrigine",
+                        "Lansoprazole",
+                        "Levothyroxine",
+                        "Lidocaine",
+                        "Lisinopril",
+                        "Loratadine",
+                        "Lovastatin",
+                        "Lithium"
+                    ],
+                    'M': [
+                        "Metformin",
+                        "Metoprolol",
+                        "Montelukast",
+                        "Mirtazapine",
+                        "Methotrexate",
+                        "Morphine",
+                        "Meloxicam",
+                        "Miconazole"
+                    ],
+                    'N': [
+                        "Naproxen",
+                        "Nitroglycerin",
+                        "Nifedipine",
+                        "Nortriptyline",
+                        "Nystatin"
+                    ],
+                    'O': [
+                        "Omeprazole",
+                        "Oxycodone",
+                        "Olanzapine",
+                        "Ondansetron"
+                    ],
+                    'P': [
+                        "Paroxetine",
+                        "Prednisone",
+                        "Propranolol",
+                        "Pantoprazole"
+                    ],
+                    'Q': [
+                        "Quetiapine",
+                        "Quinapril"
+                    ],
+                    'R': [
+                        "Ritalin",
+                        "Rosuvastatin",
+                        "Ropinirole",
+                        "Remicade"
+                    ],
+                    'S': [
+                        "Sertraline",
+                        "Simvastatin",
+                        "Sildenafil",
+                        "Sitagliptin"
+                    ],
+                    'T': [
+                        "Tramadol",
+                        "Trazodone",
+                        "Tamsulosin",
+                        "Topiramate"
+                    ],
+                    'U': [
+                        "Ulipristal",
+                        "Ursodiol"
+                    ],
+                    'V': [
+                        "Venlafaxine",
+                        "Varenicline",
+                        "Valacyclovir",
+                        "Vancomycin"
+                    ],
+                    'W': [
+                        "Warfarin",
+                        "Wixela Inhub"
+                    ],
+                    'X': [
+                        "Xalatan",
+                        "Xanax"
+                    ],
+                    'Y': [
+                        "Yaz",
+                        "Yervoy"
+                    ],
+                    'Z': [
+                        "Zoloft",
+                        "Zetia",
+                        "Zyrtec",
+                        "Zofran"
+                    ]
+                };
+
+
+        // Function to show drugs based on the letter clicked
+        function showDrugs(letter) {
+            const drugList = drugData[letter];
+            const drugListDiv = document.getElementById('drug-list');
+            drugListDiv.innerHTML = ''; // Clear previous list
+
+            if (drugList && drugList.length > 0) {
+                const ul = document.createElement('ul');
+                drugList.forEach(drug => {
+                    const li = document.createElement('li');
+                    li.textContent = drug;
+                    li.classList.add('drug-item'); // Add class for styling
+                    ul.appendChild(li);
+                });
+                drugListDiv.appendChild(ul);
+            } else {
+                drugListDiv.textContent = 'No drugs found for this letter.';
+            }
+        }
+
+    </script>
+    
 </body>
 </html>

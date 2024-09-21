@@ -1,43 +1,41 @@
-.logo
-{
+/* Logo styles */
+.logo {
     box-sizing: border-box;
     position: absolute;
     width: 20%;
     max-width: 133px;
     height: 54px;
     left: 5%;
-    top: auto;
-    background: url(a0dd25d0-e503-44a6-9074-4bb9ce0e0b67.jpg);
+    top: 10px; /* Adjusted for better positioning */
+    background-color: blue; /* Background color */
     border: 1px solid #000000;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 5px;
-    background-color: blue;
-    transition: 1s;
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
-.logo:hover
-{
+
+.logo:hover {
     transform: scale(1.2);
-    transition: ease 0.3s;
-
 }
 
-.search
-{
+/* Search bar styles */
+.search {
     width: 100%;
-    height: 150px;
-    background-color: #0A3E1F;
+    height: 100px;
+    background-color: #106131;
     margin-top: 70px;
-    position: absolute;
-}
-.search h1
-{
-    font-size: 25px;
-    text-align: center;
-
+    text-align: center; /* Center text */
+    position: relative; /* Changed to relative for layout */
 }
 
-.input_div
-{
+.search h1 {
+    font-size: 30px; /* Increased font size */
+    color: white; /* White text color */
+    padding-top: 30px; /* Top padding for spacing */
+}
+
+/* Input div styles (if used) */
+.input_div {
     width: 70%;
     height: 100px;
     background-color: #C9FBF8;
@@ -45,11 +43,73 @@
     transform: translateY(30px);
     border-radius: 3%;
 }
-.input_div input
-{
+
+.input_div input {
     width: 80%;
     margin-left: 10%;
     margin-top: 5px;
     padding: 5px;
     border-radius: 5%;
+}
+
+/* Alphabet box styles */
+#alphabet {
+    width: 100%; /* Full width for the alphabet container */
+    text-align: center; /* Center alphabet boxes */
+    margin: 50px auto; /* Margin for spacing */
+    display: flex; /* Flex layout for responsiveness */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center items */
+    gap: 15px; /* Space between boxes */
+}
+
+.alphabet-box {
+    background-color: #f0f0f0; /* Light background */
+    border: 2px solid #106131; /* Border color */
+    padding: 15px 20px; /* Padding for the boxes */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    font-size: 24px; /* Font size for better readability */
+    color: #106131; /* Default text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover effect for alphabet boxes */
+.alphabet-box:hover {
+    background-color: #106131; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Drug list styles */
+#drug-list {
+    width: 70%; /* Width for the drug list */
+    margin: 20px auto; /* Center the list */
+    padding: 20px; /* Padding inside the list */
+    background-color: #f9f9f9; /* Light background for the list */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+}
+
+/* Style for the unordered list */
+#drug-list ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+/* Style for individual drug items */
+.drug-item {
+    padding: 10px 15px; /* Vertical and horizontal spacing */
+    border-radius: 5px; /* Rounded corners for items */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for drug items */
+.drug-item:hover {
+    background-color: #e0f7fa; /* Light blue background on hover */
+    color: #00695c; /* Darker text color on hover */
+    font-weight: bold; /* Make text bold on hover */
+    transform: scale(1.02); /* Slight scale effect on hover */
+    cursor: pointer; /* Pointer cursor on hover */
 }
