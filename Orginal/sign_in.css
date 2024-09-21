@@ -1,0 +1,138 @@
+body
+{
+    background-color: rgb(197, 250, 250);
+}
+
+.back_button
+{
+    position: absolute;
+    right: 25px;
+    top: 30px;
+}
+
+.outer
+{
+    width: 80%;
+    height: 500px;
+    background-color: white;
+    margin: 110px auto;
+    max-width: 750px;
+    display: flex;
+    border: 5px solid black;
+}
+
+.left
+{
+    width: 50%;
+    height: 500px;
+    max-width: 600px;
+
+    border-right: 5px solid black;
+}
+
+.right
+{
+    width: 50%;
+    height: 500px;
+    max-width: 600px;
+
+    overflow-x: hidden;
+}
+h3
+{
+    block-size: 10px;
+    font-size: 30px;
+}
+h1
+{
+    block-size: 15px;
+}
+.sec
+{
+    block-size: 10px;
+    font-size: 40px;
+}
+h2
+{
+    block-size: 10px;
+}
+.pad
+{
+    margin-left: 40px;
+}
+
+.left_sign
+{
+    width: 80%;
+    height: 300px;
+    background-color: red;
+    margin: 70px auto;
+    position: relative;
+}
+
+.small
+{
+    position: relative;
+    width: 80%;
+    height: 75px;
+    background-color: rgb(134, 226, 247, 0.6);
+    margin: auto;
+    border-radius: 7%;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    transition: 0.5s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.small:hover
+{
+    transform: scale(1.1);
+    background-color: rgb(119, 237, 138);
+    font-weight: bolder;
+}
+
+.google
+{
+    margin-top: 100px;
+}
+.facebook
+{
+    margin-top: 10px;
+}
+.email
+{
+    margin-top: 10px;
+}
+
+.right_form
+{
+
+    width: 80%;
+    max-width: 200px;
+    height: 250px;
+    margin: 50px auto;
+}
+
+.proceed_button
+{
+    margin-right: 10px;
+    float: right;
+}
+
+.input
+{
+    margin-top: 15px;
+    width: 100%;
+    box-shadow: 20px;
+
+}
+
+
+
+.proceed_button
+{
+    margin-top: 15px;
+}
